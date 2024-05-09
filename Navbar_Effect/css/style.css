@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Noto Sans', sans-serif;
+    overflow-x: hidden; /*NO PERMITE QUE MUESTR CONTENIDO DE A LA DERECHA NI LA IZQUIERDA*/
+    margin: 0;
+}
+
+.container{
+    transform-origin: top left;
+    transition: transform 0.5s linear ;
+    width: 100vw;
+    min-height: 100vh; 
+    padding:50px;
+    
+}
+
+.container.show-nav{
+    transform: rotate(-20deg);
+    
+    
+}
+
+.cirle-container{
+    position: fixed;
+    top: -100px;
+    left: -100px;
+    
+}
+
+.circle {
+    background-color: #ff7979;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    position: relative;
+    transition: transform 0.5s linear;
+}
+
+.container.show-nav .circle{
+    transform: rotate(-70deg);
+}  
+
+.circle button{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100px;
+    background: transparent;
+    border: 0;
+    color: #ffff;
+    font-size: 26px;
+}
+
+nav{
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    z-index: 100px;
+}
+
+nav ul li {
+    display: block;
+    font-size: 18px;
+    margin: 40px 0;
+    transform: translateX(-200%);
+    transition: transform 0.4s ease-in;
+
+
+}
+nav ul li i {
+    font-size: 10px;
+    margin-right: 10px;
+}
+
+
+nav ul li + li {
+    margin-left: 15px;
+}
+
+nav ul li + li + li{
+    margin-left: 30px;
+
+}
+.circle button#open{
+    left:60%;
+}
+
+.circle button#close{
+    top: 60%;
+    transform: rotate(90deg);
+    transform-origin: top left;
+}
+
+.container.show-nav + nav li{
+    transform: translateX(0);
+    transition-delay: 0.3s;
+}
+
+.content img{
+    max-width: 100%;
+}
+
+.content{
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
